@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.cg.service.TestAddToCart
+Test set: com.cg.service.TestViewCart
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 s - in com.cg.service.TestAddToCart
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.cg.service.TestViewCart

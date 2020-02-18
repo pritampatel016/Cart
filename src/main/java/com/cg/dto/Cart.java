@@ -28,9 +28,4 @@ public class Cart {
 		this.products = products;
 	}
 
-	@Override
-	public String toString() {
-		return "Cart [cartId=" + cartId + ", products=" + products + "]";
-	}
-
 }

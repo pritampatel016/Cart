@@ -22,13 +22,15 @@ public class CartServiceImpl implements CartService {
 	 *         Description:-This method checks the validation for the productId
 	 *         where it should contain 4 digits and first digit cannot be zero if
 	 *         the productId do not matches the condition then it throws
-	 *         validateException.The value stored in the particular cartId and
+	 *         validateException. The value stored in the particular cartId and
 	 *         productId are stored. if the value stored in the cart is not null
 	 *         then the product is added to the list and finally it is added in the
 	 *         cartMap. and if the cart is null then a new cartId is created and the
 	 *         product is added in the cartMap.
 	 *
 	 *         Parametrs:cartId (String), productId (String) Return type:-boolean
+	 * @throws ProductAlreadyExistsException
+	 * 
 	 */
 	@Override
 	public boolean addToCart(String cartId, String productId) throws ProductNotFoundException, ValidateException {
@@ -36,8 +38,8 @@ public class CartServiceImpl implements CartService {
 			throw new ValidateException("productID must contain 4 digits and first digit must be 1-9");
 		boolean addCheck = false;
 		Product product = dao.getProduct(productId);
-
 		Cart cart = dao.getCart(cartId);
+
 		if (cart != null) {
 			List<Product> pList = cart.getProducts();
 			pList.add(product);
@@ -45,9 +47,9 @@ public class CartServiceImpl implements CartService {
 			addCheck = dao.setCart(cart);
 		} else {
 			String id = String.valueOf(++CgRepo.cartId);
-			List<Product> list = new ArrayList<>();
-			list.add(product);
-			Cart newCart = new Cart(id, list);
+			List<Product> lst = new ArrayList<>();
+			lst.add(product);
+			Cart newCart = new Cart(id, lst);
 			addCheck = dao.setCart(newCart);
 		}
 
