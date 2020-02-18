@@ -18,6 +18,7 @@ public class CgRepo {
 	static {
 		/*--------------------------------Product Data----------------------------------------*/
 		// Creating the instance of Product class and passing the values as parameters
+		// The parameters are productId,ProductName,productInfo,brands,price
 
 		Product p1 = new Product("1100", "shoes", "formal shoes", " Bata", 1200.0);
 		Product p2 = new Product("1101", "Mobile", "Samsung Galaxy A50 ( 64 GB)(4 GB RAM)", "Samsung", 18000.0);
@@ -35,6 +36,7 @@ public class CgRepo {
 		plist.add(p4);
 
 		// creating the instance of Cart class and passing into the cartMap as values
+		// The parameters are cartId,products
 		Cart c1 = new Cart("101", plist);
 		Cart c2 = new Cart("102", plist);
 		cartMap.put("101", c1);
