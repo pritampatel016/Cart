@@ -15,14 +15,17 @@ public class CartDaoImpl implements CartDao {
 	@Override
 	public Product getProduct(String productId) throws ProductNotFoundException {
 
-		/*
-		 * AutherName:-PritamPatel Description:- This method checks if the productId is
-		 * available in the productMap as a key and returns the value stored in the
-		 * productMap for that particular key. If ProductId is not available in the
-		 * ProductMap then it throws ProductNotAvailable exception.
+		/**
+		 * @author:-Pritam Patel
 		 * 
-		 * Parameter:- productId (String) Return Type:- Product
-		 */
+		 *                 Description:- This method checks if the productId is
+		 *                 available in the productMap as a key and returns the value
+		 *                 stored in the productMap for that particular key. If
+		 *                 ProductId is not available in the ProductMap then it throws
+		 *                 ProductNotAvailable exception.
+		 * 
+		 *                 Parameter:- productId (String) Return Type:- Product
+		 **/
 
 		if (!productMap.containsKey(productId))
 			throw new ProductNotFoundException("product not available");
@@ -33,7 +36,7 @@ public class CartDaoImpl implements CartDao {
 	@Override
 	public Cart getCart(String cartId) {
 
-		/*
+		/**
 		 * AutherName:-PritamPatel Description:- This method checks if the cartId is
 		 * available in the cartMap as a key and returns the value stored in the cartMap
 		 * for that particular key.It returns null if the key is not available.
@@ -47,13 +50,11 @@ public class CartDaoImpl implements CartDao {
 
 	@Override
 	public boolean setCart(Cart cart) {
-		/*
-		 * AutherName:-PritamPatel Description:- This method checks if the productId is
-		 * available in the productMap as a key and returns the value stored in the
-		 * productMap for that particular key. If ProductId is not available in the
-		 * ProductMap then it throws ProductNotAvailable exception.
+		/**
+		 * AutherName:-PritamPatel Description:- This method is used for adding the
+		 * products into the cartMap
 		 * 
-		 * Parameter:- productId (String) Return Type:- Product
+		 * Parameter:- cart (Cart) Return Type:- boolean
 		 */
 		Cart cart1 = cartMap.put(cart.getCartId(), cart);
 		// return true;

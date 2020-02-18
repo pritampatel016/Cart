@@ -16,6 +16,7 @@ public class CartServiceImpl implements CartService {
 
 	CartDao dao = new CartDaoImpl();
 
+	// add to database
 	@Override
 	public boolean addToCart(String cartId, String productId) throws ProductNotFoundException, ValidateException {
 		if (!productId.matches("[1-9][0-9]{3}"))
